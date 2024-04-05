@@ -46,13 +46,13 @@ fn sort() {
     }
     println!(" - unsorted");
     // apply bubblesort
-    let mut keepCycling: bool = true;
-    while keepCycling {
-        keepCycling = false;
+    let mut keep_cycling: bool = true;
+    while keep_cycling {
+        keep_cycling = false;
         for i in 0..numbers.len()-1 {
             if numbers[i] > numbers[i+1] {
                 numbers.swap(i, i+1);
-                keepCycling = true;
+                keep_cycling = true;
             }
         }
     }
