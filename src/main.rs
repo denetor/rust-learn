@@ -1,9 +1,11 @@
 use std::env;
+use rust_learn::sortstr;
 
 enum GivenCommand {
     HELP,
     SUM,
     SORT,
+    SORTSTR,
 }
 
 fn main() {
@@ -14,12 +16,15 @@ fn main() {
             given_command = GivenCommand::SUM;
         } else if &args[1] == "sort" {
             given_command = GivenCommand::SORT;
+        } else if &args[1] == "sortstr" {
+            given_command = GivenCommand::SORTSTR;
         }
     }
     match given_command {
         GivenCommand::HELP => show_help(),
         GivenCommand::SUM => sum(),
         GivenCommand::SORT => sort(),
+        GivenCommand::SORTSTR => sortstr::sort(),
     }
 }
 
